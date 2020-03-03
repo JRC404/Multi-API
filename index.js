@@ -60,6 +60,15 @@ app.get('/pokemon', async (req, res) => {
     })
 })
 
+app.get('/nasa', async (req, res) => {
+    let data = await getAPI.getNasa()
+
+    console.log(data)
+    res.render('nasa', {
+        data
+    })
+})
+
 app.listen(3000, () => { // creates a connection on a specified port - localhost:3000 - the response I should get when I run... is 'cannot get /'
     console.log('I am listening on port 3000.');
 });
